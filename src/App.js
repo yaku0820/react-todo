@@ -4,7 +4,8 @@ import Tasks from './components/Tasks';
 import zurag from "./components/img/23e6029c5285471338418f1556811ce9.jpg"
 import './App.css';
 import AddTask from "./components/AddTask";
-
+import React from "react";
+import Button from "./components/Button";
 function App() {
   const [tasks,setTasks]=useState([
     {
@@ -31,10 +32,13 @@ function App() {
     const newTask={id,text:task}
     setTasks([...tasks,newTask])
   }
+  const [show,setShow]=useState(true)
+  const showAddTask = ()=>setShow(!show)
   return (
     <div className="container">
-          <Header/>
-          <AddTask onAdd={addTask}/>
+
+          <Header onAdd={showAddTask} />
+          {show?<AddTask onAdd={addTask}/>:null}
           {tasks ? <Tasks tasks={tasks} onDelete={deleteTask}/> : "no task"}
     </div>
   );

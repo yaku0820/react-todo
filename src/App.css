@@ -128,3 +128,11 @@ input{
   background-color: #f1eded;
   border-radius: 30px;
 }
+  /* button{
+    position: absolute;
+    top: 50px;
+    right: 550px;
+    width: 80px;
+    height: 50px;
+    background-image: linear-gradient(rgb(247, 66, 66) rgb(169, 93, 93));
+  } */
